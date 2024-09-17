@@ -19,11 +19,9 @@ const Cybersecurity = () => {
           <h3
             className="text-xl font-semibold mb-4"
             style={{
-              background: '#C471ED99',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              textFillColor: 'transparent',
+              backgroundImage: 'linear-gradient(90deg, #C471ED99 0%, #C471ED99 100%)', // Aplicar el gradiente al texto
               fontSize: '23px',
             }}
           >
