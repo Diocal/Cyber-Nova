@@ -25,3 +25,100 @@ body {
     text-wrap: balance;
   }
 }
+
+@import url('https://fonts.googleapis.com/css2?family=YourFontName:wght@400;700&display=swap');
+
+body {
+  font-family: 'YourFontName', sans-serif;
+}
+
+/* Primer gradiente */
+.gradient-1 {
+  position: absolute;
+  top: -26px;
+  left: 579px;
+  width: 1160px;
+  height: 1160px;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(46, 191, 145, 0.3) 0%, rgba(213, 226, 244, 0) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Segundo gradiente */
+.gradient-2 {
+  position: absolute;
+  top: -402px;
+  left: -228px;
+  width: 1309px;
+  height: 1309px;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(213, 183, 245, 0.42) 0%, rgba(213, 183, 245, 0) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Tercer gradiente */
+.gradient-3 {
+  position: absolute;
+  top: 702px;
+  left: 360px;
+  width: 1309px;
+  height: 1309px;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(196, 113, 237, 0.28) 0%, rgba(213, 183, 245, 0) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Cuarto gradiente */
+.gradient-4 {
+  position: absolute;
+  top: 1066px;
+  left: -491px;
+  width: 1160px;
+  height: 1160px;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(46, 191, 145, 0.3) 0%, rgba(213, 226, 244, 0) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Quinto gradiente */
+.gradient-5 {
+  position: absolute;
+  top: 2013px;
+  left: 748px;
+  width: 1160px;
+  height: 1160px;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(46, 191, 145, 0.3) 0%, rgba(213, 226, 244, 0) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Sexto gradiente */
+.gradient-6 {
+  position: absolute;
+  top: 2552px;
+  left: -458px;
+  width: 1160px;
+  height: 1160px;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(196, 113, 237, 0.3) 0%, rgba(213, 226, 244, 0) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  /* Para scroll horizontal */
+  overflow-x: hidden;
+}
+html, body {
+  overflow-x: hidden;
+}
+
+
+body {
+  position: relative;
+  min-height: 100vh; /* Asegúrate de que tenga al menos la altura de la ventana */
+}
+body::-webkit-scrollbar {
+  display: none;
+}
