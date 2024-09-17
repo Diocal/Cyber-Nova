@@ -19,11 +19,10 @@ const AppDevelopment = () => {
           <h3
             className="text-xl font-semibold mb-4"
             style={{
-              background: '#C471ED99',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+              backgroundImage: 'linear-gradient(90deg, #C471ED, #45A29E)', // Degradado
               backgroundClip: 'text',
-              textFillColor: 'transparent',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent', // Hace que solo el texto tenga el degradado
               fontSize: '23px',
             }}
           >
@@ -71,7 +70,7 @@ const AppDevelopment = () => {
             <li className="border-b border-gray-500 py-2">
               <span className="text-lg text-gray-100">Prototyping & Testing</span>
             </li>
-            <li className="border-b border-gray-500 py-2"> {/* Aquí añadimos la línea inferior */}
+            <li className="border-b border-gray-500 py-2">
               <span className="text-lg text-gray-100">App Maintenance & Support</span>
             </li>
           </ul>
