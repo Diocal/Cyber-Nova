@@ -8,22 +8,21 @@ const ArtificialIntelligence = () => {
         top: '3773px',
         left: '71px',
         gap: '0px',
-        border: '1px solid transparent',
-        opacity: '1',
+        border: '1px solid transparent', // Borde superior de 1px transparente
+        opacity: '1', // Hacerlo visible
         paddingBottom: '40px', // Añadir espacio debajo del contenido
       }}
     >
       <div className="max-w-[85%] mx-auto flex justify-between">
         {/* Texto Descriptivo */}
-        <div className="w-[65%] pr-12"> {/* Cambié el width de 55% a 65% */}
+        <div className="w-[55%] pr-12">
           <h3
             className="text-xl font-semibold mb-4"
             style={{
-              background: '#C471ED99',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+              backgroundImage: 'linear-gradient(90deg, #C471ED, #45A29E)', // Degradado
               backgroundClip: 'text',
-              textFillColor: 'transparent',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent', // Hace que solo el texto tenga el degradado
               fontSize: '23px',
             }}
           >
@@ -46,7 +45,7 @@ const ArtificialIntelligence = () => {
           <h2
             className="text-5xl font-extrabold"
             style={{
-              color: '#C471ED4D',
+              color: '#C471ED4D', // Color actualizado para "Artificial Intelligence"
               fontFamily: '"Neue Haas Grotesk Display Pro", sans-serif',
               fontSize: '70px',
               fontWeight: '600',
@@ -59,7 +58,7 @@ const ArtificialIntelligence = () => {
         </div>
 
         {/* Lista de Servicios */}
-        <div className="w-[35%] flex flex-col justify-center"> {/* Ajustado para balancear el diseño */}
+        <div className="w-[40%] flex flex-col justify-center">
           <ul className="space-y-6 text-right">
             <li className="border-b border-gray-500 py-2">
               <span className="text-lg text-gray-100">Custom AI Solution</span>
@@ -70,7 +69,7 @@ const ArtificialIntelligence = () => {
             <li className="border-b border-gray-500 py-2">
               <span className="text-lg text-gray-100">Automation & Optimization</span>
             </li>
-            <li className="border-b border-gray-500 py-2">
+            <li className="border-b border-gray-500 py-2"> {/* Aquí añadimos la línea inferior */}
               <span className="text-lg text-gray-100">AI-Powered Security Enhancements</span>
             </li>
           </ul>
@@ -81,10 +80,10 @@ const ArtificialIntelligence = () => {
       <div
         className="absolute left-0 bottom-0 w-full border-b"
         style={{
-          borderColor: '#CEACF399',
-          borderWidth: '1px',
-          opacity: '0.6',
-          bottom: '-180px',
+          borderColor: '#CEACF399', // Color del borde
+          borderWidth: '1px', // Grosor del borde
+          opacity: '0.6', // Hacer el borde más sutil
+          bottom: '-180px', // Mueve la línea más abajo si lo necesitas
         }}
       />
     </section>
