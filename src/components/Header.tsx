@@ -10,12 +10,17 @@ const Header = () => {
   // Función para alternar el estado del menú
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+    if (!menuOpen) {
+      document.body.style.overflow = 'hidden'; // Evitar scroll cuando el menú esté abierto
+    } else {
+      document.body.style.overflow = 'auto'; // Restablecer scroll cuando el menú esté cerrado
+    }
   };
 
   return (
-    <header className="relative w-full h-screen overflow-hidden z-0">
+    <header className={`relative w-full h-screen overflow-hidden ${menuOpen ? 'z-0' : 'z-10'}`}>
       {/* Imagen del vector ajustada */}
-      <div className="absolute md:top-[-223.18px] md:left-[-51px] top-[-60px] left-[-60px] w-[400px] h-[400px] md:w-[677px] md:h-[713.87px]">
+      <div className="absolute md:top-[-223.18px] md:left-[-51px] top-[-60px] left-[-60px] w-[400px] h-[400px] md:w-[677px] md:h-[713.87px] z-0">
         <Image
           src={vectorWeb}
           alt="vector web"
@@ -51,11 +56,11 @@ const Header = () => {
 
         {/* Menú desplegable para móvil */}
         <div
-          className={`fixed top-0 right-0 h-full w-3/4 bg-black bg-opacity-90 z-30 flex flex-col items-center justify-center space-y-8 text-white transform ${
+          className={`fixed inset-0 h-full w-full bg-black bg-opacity-100 z-[9999] flex flex-col items-center justify-center space-y-8 text-white transform ${
             menuOpen ? 'translate-x-0' : 'translate-x-full'
           } transition-transform duration-300 ease-in-out`}
         >
-          <button onClick={toggleMenu} className="absolute top-4 right-4 text-white">
+          <button onClick={toggleMenu} className="absolute top-4 right-4 text-white z-[10000]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -102,20 +107,27 @@ const Header = () => {
       </div>
 
       {/* Texto central ajustado con margen superior reducido */}
-      <div className="relative z-10 text-left max-w-[85%] ml-[10px] mt-[250px] md:max-w-none md:ml-[85px] md:mt-[400px]">
-        <h1 className="text-[35px] md:text-[80px] font-extrabold leading-tight md:leading-[105px] bg-gradient-to-r from-purple-400 via-purple-500 to-green-500 bg-clip-text text-transparent">
+      <div className={`relative z-${menuOpen ? '0' : '10'} text-left max-w-[85%] ml-[10px] mt-[250px] md:max-w-none md:ml-[85px] md:mt-[400px]`}>
+        <h1
+          className="text-[35px] md:text-[80px] font-extrabold leading-tight md:leading-[105px] bg-clip-text text-transparent"
+          style={{
+            background: "linear-gradient(90deg, rgba(131, 96, 195, 0.5) 0%, #C471ED 47%, rgba(46, 191, 145, 0.5) 100%)",
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text",
+          }}
+        >
           Building Intelligent Solutions, <span className="block md:inline">Securing Your</span> Digital World
         </h1>
       </div>
 
       {/* Subtítulo ajustado */}
-      <div className="relative z-10 text-left max-w-[85%] ml-[10px] mt-[30px] md:ml-[85px] md:mt-4 text-base md:text-3xl text-gray-300 leading-relaxed">
-        Innovative Solutions in Cybersecurity, AI <br />
-        and APP Development to Protect and Propel Your Business
+      <div className={`relative z-${menuOpen ? '0' : '10'} text-left max-w-[85%] ml-[10px] mt-[30px] md:ml-[85px] md:mt-4 text-base md:text-3xl text-gray-300 leading-relaxed`}>
+        Innovative Solutions in Cybersecurity, AI
+        and APP Development to Protect and Propel <br />Your Business
       </div>
 
       {/* Botón de contacto (visible solo en móviles) */}
-      <div className="relative z-10 mt-4 mb-8 text-left ml-[10px] md:ml-[85px] block md:hidden">
+      <div className={`relative z-${menuOpen ? '0' : '10'} mt-4 mb-8 text-left ml-[10px] md:ml-[85px] block md:hidden`}>
         <a
           href="#contact"
           className="inline-flex items-center justify-center px-5 py-3 text-sm md:text-base font-bold text-white"
@@ -131,10 +143,9 @@ const Header = () => {
       {/* Media queries para la vista móvil */}
       <style jsx>{`
         @media (max-width: 768px) {
-          /* Posiciona el logo y el menú más arriba */
           .navbar {
             position: relative;
-            top: -50px; /* Ajusta este valor según lo que necesites */
+            top: -50px;
           }
         }
       `}</style>
