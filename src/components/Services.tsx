@@ -17,7 +17,7 @@ const Services = () => {
         left: '44px',
         gap: '0px',
         borderRadius: '25px 0px 0px 0px',
-        opacity: '1', // Mantener la visibilidad
+        opacity: '1',
       }}
     >
       <div className="w-full">
@@ -27,39 +27,39 @@ const Services = () => {
           style={{
             fontFamily: '"Neue Haas Grotesk Display Pro", sans-serif',
             fontSize: '40px',
-            fontWeight: '900', // Incrementar el font-weight a 900 para más grosor
+            fontWeight: '900',
             lineHeight: '70px',
             textAlign: 'left',
-            background: '#C471ED99', // Color de fondo que especificaste
-            WebkitBackgroundClip: 'text', // Para asegurarse de que el fondo aplique solo al texto
+            background: '#C471ED99',
+            WebkitBackgroundClip: 'text',
             backgroundClip: 'text',
-            color: 'transparent', // Transparente para mostrar el color del fondo en el texto
+            color: 'transparent',
           }}
         >
           Services
         </h2>
 
         {/* Lista de Servicios */}
-        <div className="space-y-4"> {/* Ajuste del espacio entre servicios */}
+        <div className="space-y-4">
           {servicesData.map((service, index) => (
             <div
               key={index}
               className={`flex justify-between items-center pb-4 ${
-                index === 0 ? 'border-t border-gray-500 pt-6' : '' // Agregar más espacio superior al primer elemento
+                index === 0 ? 'border-t border-gray-500 pt-6' : ''
               } border-b border-gray-500`}
               style={{
-                paddingBottom: '16px', // Ajuste del padding inferior para reducir espacio
-                borderBottomWidth: '1px', // Grosor de la línea inferior
-                borderTopWidth: index === 0 ? '1px' : '0', // Grosor de la línea superior
+                paddingBottom: '16px',
+                borderBottomWidth: '1px',
+                borderTopWidth: index === 0 ? '1px' : '0',
               }}
             >
               <div
                 className="text-lg font-semibold"
                 style={{
                   fontFamily: '"Neue Haas Grotesk Display Pro", sans-serif',
-                  fontSize: '25px', // Tamaño de fuente unificado
-                  fontWeight: '700', // Mayor grosor en los títulos de servicios
-                  lineHeight: '30px', // Line-height unificado
+                  fontSize: '25px',
+                  fontWeight: '700',
+                  lineHeight: '30px',
                   textAlign: 'left',
                   color: 'white',
                 }}
@@ -72,12 +72,12 @@ const Services = () => {
                   fontFamily: '"Neue Haas Grotesk Display Pro", sans-serif',
                   fontSize: '16px',
                   color: 'white',
-                  backgroundColor: 'transparent', // Fondo transparente
-                  border: '2px solid rgba(196, 113, 237, 0.5)', // Borde morado claro
-                  borderRadius: '50px', // Redondez completa
-                  width: '150px', // Aumentar el ancho del botón
-                  padding: '10px 30px', // Reducir la altura del botón
-                  transition: 'background-color 0.3s ease, box-shadow 0.3s ease', // Transiciones suaves
+                  backgroundColor: 'transparent',
+                  border: '2px solid rgba(196, 113, 237, 0.5)',
+                  borderRadius: '50px',
+                  width: '150px',
+                  padding: '10px 30px',
+                  transition: 'background-color 0.3s ease, box-shadow 0.3s ease',
                 }}
               >
                 Learn More
@@ -87,16 +87,37 @@ const Services = () => {
         </div>
       </div>
 
-      {/* Estilos adicionales para el botón */}
       <style jsx>{`
         .custom-button {
-          background-color: rgba(196, 113, 237, 0.2); /* Color de fondo suave */
-          border: 2px solid rgba(177, 142, 233, 0.5); /* Color del borde */
+          background-color: rgba(196, 113, 237, 0.2);
+          border: 2px solid rgba(177, 142, 233, 0.5);
         }
         .custom-button:hover {
-          background-color: rgba(196, 113, 237, 0.5); /* Color de fondo al hacer hover */
-          box-shadow: 0 4px 12px rgba(196, 113, 237, 0.5); /* Sombra suave */
-          border-color: rgba(177, 142, 233, 0.8); /* Color de borde al hacer hover */
+          background-color: rgba(196, 113, 237, 0.5);
+          box-shadow: 0 4px 12px rgba(196, 113, 237, 0.5);
+          border-color: rgba(177, 142, 233, 0.8);
+        }
+
+        @media (max-width: 768px) {
+          section {
+            width: 100%;
+            top: auto;
+            left: auto;
+            padding: 20px;
+            border-radius: 0;
+          }
+          h2 {
+            font-size: 30px;
+            line-height: 50px;
+          }
+          .flex {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+          .custom-button {
+            width: 100%;
+            padding: 15px 0;
+          }
         }
       `}</style>
     </section>

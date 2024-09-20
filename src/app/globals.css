@@ -34,18 +34,8 @@ body {
 
 /* Primer gradiente */
 .gradient-1 {
-  position: absolute;
-  top: -26px;
-  left: 579px;
-  width: 1160px;
-  height: 1160px;
-  background: radial-gradient(50% 50% at 50% 50%, rgba(46, 191, 145, 0.3) 0%, rgba(213, 226, 244, 0) 100%);
-  z-index: -1;
-  pointer-events: none;
-}
 
-/* Segundo gradiente */
-.gradient-2 {
+
   position: absolute;
   top: -402px;
   left: -228px;
@@ -54,6 +44,37 @@ body {
   background: radial-gradient(50% 50% at 50% 50%, rgba(213, 183, 245, 0.42) 0%, rgba(213, 183, 245, 0) 100%);
   z-index: -1;
   pointer-events: none;
+}
+
+/* Segundo gradiente */
+.gradient-2 {
+  position: absolute;
+  top: -26px;
+  left: 579px;
+  width: 1160px;
+  height: 1160px;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(46, 191, 145, 0.3) 0%, rgba(213, 226, 244, 0) 100%);
+  z-index: -2; /* Aseguramos que esté detrás del segundo gradiente */
+  pointer-events: none;
+}
+
+/* Ajustes para pantallas móviles */
+@media (max-width: 768px) {
+  /* Ajustes para el primer gradiente */
+  .gradient-1 {
+    top: -100px;
+    left: -100px;
+    width: 600px;
+    height: 600px;
+  }
+
+  /* Ajustes para el segundo gradiente */
+  .gradient-2 {
+    top: 150px; /* Mueve el gradiente más abajo */
+    left: 100px; /* Mueve el gradiente hacia la derecha */
+    width: 800px;
+    height: 800px;
+  }
 }
 
 /* Tercer gradiente */
@@ -110,10 +131,6 @@ html, body {
   /* Para scroll horizontal */
   overflow-x: hidden;
 }
-html, body {
-  overflow-x: hidden;
-}
-
 
 body {
   position: relative;
@@ -121,4 +138,36 @@ body {
 }
 body::-webkit-scrollbar {
   display: none;
+}
+
+/* Título */
+.title-text {
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  position: absolute;
+  top: 406px;
+  left: 31px;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  h1 span {
+    display: block;
+  }
+
+  header {
+    padding-top: 80px;
+  }
+
+  .text-left {
+    margin-left: 20px;
+  }
+
+  .text-right {
+    margin-right: 20px;
+  }
 }
