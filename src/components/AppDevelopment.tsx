@@ -1,92 +1,45 @@
-const AppDevelopment = () => {
+"use client";
+import React from 'react';
+
+const AppDevelopment: React.FC = () => {
   return (
-    <section
-      className="absolute bg-transparent text-white"
-      style={{
-        width: '1397px',
-        height: '410px',
-        top: '2078px',
-        left: '71px',
-        gap: '0px',
-        border: '1px solid transparent', // Borde superior de 1px transparente
-        opacity: '1', // Hacerlo visible
-        paddingBottom: '40px', // Añadir espacio debajo del contenido
-      }}
-    >
-      <div className="max-w-[85%] mx-auto flex justify-between">
+    <section className="relative bg-transparent text-white py-16 px-8 mt-16">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between">
         {/* Texto Descriptivo */}
-        <div className="w-[55%] pr-12">
-          <h3
-            className="text-xl font-semibold mb-4"
-            style={{
-              backgroundImage: 'linear-gradient(90deg, #C471ED, #45A29E)', // Degradado
-              backgroundClip: 'text',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent', // Hace que solo el texto tenga el degradado
-              fontSize: '23px',
-            }}
-          >
+        <div className="md:w-2/3 pr-8">
+          <h3 className="text-2xl font-semibold mb-4 bg-gradient-to-r from-purple-400 to-green-500 bg-clip-text text-transparent">
             Transform Ideas Into Engaging Apps With Stunning UI/UX
           </h3>
-          <p
-            style={{
-              fontFamily: '"Neue Haas Grotesk Display Pro", sans-serif',
-              fontSize: '18px',
-              fontWeight: '600',
-              lineHeight: '35px',
-              textAlign: 'left',
-            }}
-            className="mb-8 text-gray-300"
-          >
+          <p className="mb-8 text-gray-300 text-lg leading-relaxed">
             From ideation to execution, we bring your app ideas to life with smooth,
             responsive design and cutting-edge technology. Our team ensures that each app
             is optimized for both performance and user experience, delivering an
             application that works beautifully across all devices.
           </p>
-          <h2
-            className="text-5xl font-extrabold"
-            style={{
-              color: '#C471ED4D', // Color actualizado para "App Development"
-              fontFamily: '"Neue Haas Grotesk Display Pro", sans-serif',
-              fontSize: '70px',
-              fontWeight: '600',
-              lineHeight: '108px',
-              textAlign: 'left',
-            }}
-          >
+          <h2 className="text-6xl font-extrabold text-purple-400/60">
             App Development
           </h2>
         </div>
 
         {/* Lista de Servicios */}
-        <div className="w-[40%] flex flex-col justify-center">
+        <div className="mt-8 md:mt-0 md:w-1/3 flex flex-col justify-center">
           <ul className="space-y-6 text-right">
-            <li className="border-b border-gray-500 py-2">
-              <span className="text-lg text-gray-100">Custom App Development</span>
-            </li>
-            <li className="border-b border-gray-500 py-2">
-              <span className="text-lg text-gray-100">UI/UX Design</span>
-            </li>
-            <li className="border-b border-gray-500 py-2">
-              <span className="text-lg text-gray-100">Prototyping & Testing</span>
-            </li>
-            <li className="border-b border-gray-500 py-2">
-              <span className="text-lg text-gray-100">App Maintenance & Support</span>
-            </li>
+            {[
+              "Custom App Development",
+              "UI/UX Design",
+              "Prototyping & Testing",
+              "App Maintenance & Support",
+            ].map((service, index) => (
+              <li key={index} className="border-b border-gray-500 pb-2">
+                <span className="text-lg text-gray-100">{service}</span>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
 
-      {/* Borde en la parte inferior */}
-      <div
-        className="absolute left-0 bottom-0 w-full border-b"
-        style={{
-          borderColor: '#CEACF399', // Color del borde
-          borderWidth: '1px', // Grosor del borde
-          opacity: '0.6', // Hacer el borde más sutil
-          bottom: '-180px', // Mueve la línea más abajo si lo necesitas
-        }}
-      />
+      {/* Línea inferior decorativa */}
+      <div className="w-full border-b border-purple-400/60 mt-8" />
     </section>
   );
 };

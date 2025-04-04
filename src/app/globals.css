@@ -7,6 +7,36 @@
   --foreground: #171717;
 }
 
+.navbar-wrapper {
+  top: 40px;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 1200px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 50;
+  padding: 0 24px;
+}
+
+@media (max-width: 768px) {
+  .navbar-wrapper {
+    top: 20px;
+    padding: 0 16px;
+  }
+
+  .navbar-wrapper h1 {
+    font-size: 1.5rem;
+  }
+
+  .navbar-wrapper a {
+    font-size: 1.2rem;
+  }
+}
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -148,7 +178,9 @@ body::-webkit-scrollbar {
   top: 406px;
   left: 31px;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 @media (max-width: 768px) {
   h1 {
     font-size: 28px;

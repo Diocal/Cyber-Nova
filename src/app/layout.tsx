@@ -1,7 +1,11 @@
 // app/layout.tsx
+import React from 'react';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import './globals.css';  // Importación del archivo CSS global
+import './globals.css';  
+
+import NavbarWrapper from '../components/NavbarWrapper';
+import Footer from '../components/Footer';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -25,21 +29,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         style={{
-          maxWidth: '1512px',  // Máximo ancho ajustado
-          minHeight: '100vh',  // Cambiado a 100vh para asegurar que ocupe toda la pantalla
-          margin: '0 auto',    // Centra horizontalmente en la pantalla
-          padding: '0',        // Quitamos el padding
+          maxWidth: '1512px',
+          minHeight: '100vh',
+          margin: '0 auto',
+          padding: '0',
           position: 'relative',
-          //borderRadius: '40px 0px 0px 0px',
-          overflowX: 'hidden',  // Evita scroll horizontal
-          overflowY: 'auto',    // Habilita scroll vertical si es necesario
-          backgroundColor: '#000', // Fondo negro para hacer contraste
+          overflowX: 'hidden',
+          overflowY: 'auto',
+          backgroundColor: '#000',
         }}
       >
+        {/* Renderizar Navbar en todas las páginas */}
+        <NavbarWrapper />
+        
         {/* Gradientes globales */}
         <div className="gradient-1"></div>
         <div className="gradient-2"></div>
@@ -49,7 +55,10 @@ export default function RootLayout({
         <div className="gradient-6"></div>
 
         {/* Render del contenido */}
-        {children}
+        <main className="relative z-10 ">{children}</main>
+
+        {/* Footer en la parte inferior */}
+        <Footer />
       </body>
     </html>
   );

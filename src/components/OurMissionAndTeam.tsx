@@ -1,19 +1,9 @@
 const OurMissionAndTeam = () => {
   return (
-    <section
-      className="absolute bg-transparent text-white"
-      style={{
-        width: '1370px',
-        height: '516px',
-        top: '5748px',
-        left: '78px',
-        gap: '0px',
-        opacity: '1', // Para asegurar que sea visible
-      }}
-    >
-      <div className="max-w-7xl mx-auto flex justify-between">
+    <section className="relative bg-transparent text-white py-16 px-8 mt-16">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between">
         {/* Misión y Experiencia */}
-        <div className="w-[55%]">
+        <div className="md:w-2/3">
           <div className="mb-12">
             <h3
               className="text-sm font-semibold uppercase mb-2"
@@ -45,7 +35,7 @@ const OurMissionAndTeam = () => {
         </div>
 
         {/* Título del Equipo */}
-        <div className="w-[45%] flex items-center justify-end">
+        <div className="mt-8 md:mt-0 md:w-1/3 flex items-center justify-end">
           <h2
             className="text-6xl font-extrabold"
             style={{
