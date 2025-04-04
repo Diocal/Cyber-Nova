@@ -1,7 +1,6 @@
 "use client";
 import React from 'react';
 import Header from '../components/Header';
-import AboutUs from '@/components/AboutUs';
 import Cybersecurity from '@/components/Cybersecurity';
 import ArtificialIntelligence from '../components/ArtificialIntelligence';
 import Services from '../components/Services';
